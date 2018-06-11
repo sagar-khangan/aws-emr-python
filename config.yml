@@ -1,0 +1,19 @@
+name: boto cluster
+bootstrap_file: s3://dm-emr-config/bootstrap.sh
+log_uri: s3://aws-logs-853489535230-us-west-2/elasticmapreduce/
+region: us-west-2
+ec2-key: sk_key
+emr: emr-5.14.0
+master_instance: m1.large
+slave_instance: m1.large
+ebs_size: 50
+instance_count: 1
+master_sg: sg-faf4e386 #port open for web access
+slave_sg: sg-56f7e02a 
+applications: 
+  - Hadoop
+  - Spark 
+  - Zeppelin 
+  - Ganglia
+port:
+  Zeppelin: 8890
